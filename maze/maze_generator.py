@@ -22,3 +22,12 @@ image = np.zeros((num_rows*10,num_cols*10), dtype=np.uint8)
 r = 0
 c = 0
 history = [(r,c)] # These are the visited locations in stack form
+
+# Trace a path through the cells of the maze and open walls along the path.
+# This is done with a while loop, until the history is empty
+# which means that we have bactracke to the beginning.
+
+while history:
+    M[r,c,4] = 1 # set this location as visited
+    # check if adjacent cells are valid for moving to
+    check = []
